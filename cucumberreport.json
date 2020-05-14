@@ -1,0 +1,72 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Validate login functionality",
+    "line": 1,
+    "id": "validate-login-functionality",
+    "tags": [],
+    "uri": "features\\test.feature",
+    "elements": [
+      {
+        "id": "validate-login-functionality;validate-login-tests",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Validate login tests",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": ": user is on login page",
+            "match": {
+              "location": "..\\..\\New folder 3\\test-automation\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14903000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": ": user fills the correct username and password and clicks on login button",
+            "match": {
+              "location": "..\\..\\New folder 3\\test-automation\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": ": User is succesfully logged in and home page is displayed",
+            "match": {
+              "location": "..\\..\\New folder 3\\test-automation\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "..\\..\\New folder 3\\test-automation\\node_modules\\cucumber\\lib\\support_code_library_builder\\build_helpers.js:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

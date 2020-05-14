@@ -1,0 +1,32 @@
+ {
+    "siteurl" : "http://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust",
+    "credentials" :{
+        "adminUser" : "role.role",
+        "adminUserPass" : "Orange@123",
+        "url" : "https://backoffice-prod.smartdatabundle.com/fe/home",
+        "demoUser":"demo.user1",
+        "demoPass":"Orange@123",
+        "bethuneAdmin":"bethune-administrator",
+        "bethunePass":"password1"
+    },
+    "pageHeaders":{
+    "adminPage":"Administration"
+    },
+    
+    "dataset":{
+    "service":"bethune",
+    "licence":"0: notspecified"
+    },
+    "service":{
+    "type":"Internal"
+    
+    },
+     "User":{
+    "fname":"Automation",
+    "lname":"user",
+    "stype":"Internal",
+    "role":"DO",
+    "service":"bethune"
+    
+    }
+}

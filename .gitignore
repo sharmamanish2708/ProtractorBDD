@@ -1,0 +1,11 @@
+*.log
+
+/tmp
+
+*.html
+
+*.xml
+
+*.png
+
+*.jpg
