@@ -387,7 +387,7 @@ class SerialAccess():
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
-        print("LAN Connecton ip is"+op)
+        print("LAN Connecton ip is"+op[1])
         self.ser.flush()
         time.sleep(4)
         return op[1]
@@ -404,7 +404,7 @@ class SerialAccess():
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
-        print("Last connection  is"+op)
+        print("Last connection  is"+op[1])
         self.ser.flush()
         time.sleep(4)
         return op[1]
