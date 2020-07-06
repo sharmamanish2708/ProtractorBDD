@@ -11,7 +11,7 @@ DEFAULT_PORT = '/dev/ttyUSB0'
 DEFAULT_USERNAME = 'root'
 DEFAULT_PASSWORD = 'sah'
 
-class SerialAccess():
+class Serial():
     '''
     classdocs
     '''
@@ -432,12 +432,11 @@ class SerialAccess():
 if __name__ == '__main__':
     import logging
     logging.basicConfig(level=logging.INFO)
-    livebox_serial_access=SerialAccess('/dev/ttyUSB1')
+    livebox_serial_access=Serial('/dev/ttyUSB1')
     livebox_serial_access.serial_login('root','sah')
     livebox_serial_access.getMacAddress()
     livebox_serial_access.getSoftwareVersion()
     livebox_serial_access.getHardwareVersion()
-    livebox_serial_access.getDeviceStatus()
     livebox_serial_access. getSerialNumber()
     livebox_serial_access.getLanConnectionIP()
     livebox_serial_access.getLastKarmaContact()
