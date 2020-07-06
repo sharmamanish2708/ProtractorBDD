@@ -323,7 +323,8 @@ class SerialAccess():
 
     def getMacAddress(self):
         self.ser.write(str('Device.LAN.MACAddress.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -334,7 +335,8 @@ class SerialAccess():
     
     def getSoftwareVersion(self):
         self.ser.write(str('Device.DeviceInfo.SoftwareVersion.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -346,7 +348,8 @@ class SerialAccess():
 
     def getHardwareVersion(self):
         self.ser.write(str('Device.DeviceInfo.HardwareVersion.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -358,7 +361,8 @@ class SerialAccess():
 
     def getDeviceStatus(self):
         self.ser.write(str('Device.DeviceInfo.DeviceStatus.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -371,7 +375,8 @@ class SerialAccess():
 
     def getSerialNumber(self):
         self.ser.write(str('Device.DeviceInfo.HardwareVersion.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -383,7 +388,8 @@ class SerialAccess():
 
     def getLanConnectionIP(self):
         self.ser.write(str('Device.LAN.IPAddress.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -395,12 +401,14 @@ class SerialAccess():
 
     def getDeviceInfo(self):
         device_info=self.fetchMultipleParam("Device.DeviceInfo.?")
+        time.sleep(4)
         print("device info is")
         print(device_info)
 
     def getLastKarmaContact(self):
         self.ser.write(str('Device.ManagementServer.X_ORANGE-COM_LastSuccessfulInformTime.? \r\n'))
-        output = self.ser.read(1000)
+        time.sleep(4)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
@@ -412,7 +420,7 @@ class SerialAccess():
 
     def getConnectionStatus(self):
         self.ser.write(str('ConnectionManager.Client.Common.GetConnectionState() \r\n'))
-        output = self.ser.read(1000)
+        output = self.ser.read(5000)
         time.sleep(4)
         print("python output " + output)
         op=output.split('=')
