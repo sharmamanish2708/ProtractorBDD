@@ -331,12 +331,105 @@ class SerialAccess():
         self.ser.flush()
         time.sleep(4)
         return op[1]
+    
+    def getSoftwareVersion(self):
+        self.ser.write(str('Device.DeviceInfo.SoftwareVersion.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("softare version  is "+op[1])
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+        
 
+    def getHardwareVersion(self):
+        self.ser.write(str('Device.DeviceInfo.HardwareVersion.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("hardware version  is "+op[1])
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+       
+
+    def getDeviceStatus(self):
+        self.ser.write(str('Device.DeviceInfo.DeviceStatus.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("device status  is "+op[1])
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+       
+        
+
+    def getSerialNumber(self):
+        self.ser.write(str('Device.DeviceInfo.HardwareVersion.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("device status  is "+op[1])
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+        
+
+    def getLanConnectionIP(self):
+        self.ser.write(str('Device.LAN.IPAddress.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("LAN Connecton ip is"+op)
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+       
+
+    def getDeviceInfo(self):
+        device_info=self.fetchMultipleParam("Device.DeviceInfo.?")
+        print("device info is")
+        print(device_info)
+
+    def getLastKarmaContact(self):
+        self.ser.write(str('Device.ManagementServer.X_ORANGE-COM_LastSuccessfulInformTime.? \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("Last connection  is"+op)
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+       
+
+    def getConnectionStatus(self):
+        self.ser.write(str('ConnectionManager.Client.Common.GetConnectionState() \r\n'))
+        output = self.ser.read(1000)
+        time.sleep(4)
+        print("python output " + output)
+        op=output.split('=')
+        print("Last connection  is"+op)
+        self.ser.flush()
+        time.sleep(4)
+        return op[1]
+       
 if __name__ == '__main__':
     import logging
     logging.basicConfig(level=logging.INFO)
     livebox_serial_access=SerialAccess('/dev/ttyUSB1')
     livebox_serial_access.serial_login('root','sah')
     livebox_serial_access.getMacAddress()
-
-
+    livebox_serial_access.getSoftwareVersion()
+    livebox_serial_access.getHardwareVersion()
+    livebox_serial_access.getDeviceStatus()
+    livebox_serial_access. getSerialNumber()
+    livebox_serial_access.getLanConnectionIP()
+    livebox_serial_access.getLastKarmaContact()
